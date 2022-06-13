@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <ColorCodePair.h>
+#include "ColorCode.h"
 
 void ColorPairToString(const ColorPair* colorPair, char* buffer) {
     sprintf(buffer, "%s %s",
