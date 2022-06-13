@@ -66,10 +66,13 @@ void testPairToNumber(
     printf("Got pair number %d\n", pairNumber);
     assert(pairNumber == expectedPairNumber);
 }
+
 void CodePairReference()
 {
     int i,j;
     ColorPair colorpairreference;
+	char colorPairNamesManuel[MAX_COLORPAIR_NAME_CHARS];
+	
     for(i=0;i<numberOfMajorColors;i++)
     {
         for(j=0;j<numberOfMinorColors;j++)
@@ -77,11 +80,13 @@ void CodePairReference()
             colorpairreference.majorColor = (enum MajorColor)i;
             colorpairreference.minorColor = (enum MinorColor)j;
             int pairnumberReference = GetPairNumberFromColor(&colorpairreference);
-            printf("ColorPairCodeReference  %s\n%s\n%d\n", colorpairreference.majorColor,colorpairreference.minorColor,pairnumberReference );
+			ColorPairToString(&colorpairreference, colorPairNamesManuel);
+            printf("ColorPairCodeReference  %s\n%d\n", colorPairNamesManuel,pairnumberReference );
 
         }
     }
 }
+
 int main() {
     //testNumberToPair(4, WHITE, BROWN);
     //testNumberToPair(5, WHITE, SLATE);
