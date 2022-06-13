@@ -77,7 +77,7 @@ void CodePairReference()
             colorpairreference.majorColor = (enum MajorColor)i;
             colorpairreference.minorColor = (enum MinorColor)j;
             int pairnumberReference = GetPairNumberFromColor(&colorpairreference);
-            printf("ClorPairCodeReference  %s\n%d\n", colorpairreference,pairnumberReference );
+            printf("ColorPairCodeReference  %s\n%s\n%d\n", colorpairreference.majorColor,colorpairreference.minorColor,pairnumberReference );
 
         }
     }
