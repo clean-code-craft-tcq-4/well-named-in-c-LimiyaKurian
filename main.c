@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "ColorCode.h"
+#include "ColorCode_Main.h"
 
 int main() {
 	
