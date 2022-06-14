@@ -31,4 +31,4 @@ int GetPairNumberFromColor(const ColorPair* colorPair);
 void colorCodeReferenceManuel(void);
 void testNumberToPair(int pairNumber,MajorColor expectedMajor,MinorColor expectedMinor);
 void testPairToNumber(MajorColor major,MinorColor minor,int expectedPairNumber);
-
+void ColorPairToString(const ColorPair* colorPair, char* buffer);
