@@ -48,3 +48,24 @@ void testPairToNumber(
     assert(pairNumber == expectedPairNumber);
 }
 
+void colorCodeReferenceManuel(void)
+{
+    int majorColorCount,minorColorCount;
+    ColorPair colorpairreference;
+    char colorPairNamesManuel[MAX_COLORPAIR_NAME_CHARS];
+
+    printf("ColorPairCodeReferenceManuel\n");
+
+    for(majorColorCount=0;majorColorCount<numberOfMajorColors;majorColorCount++)
+    {
+        for(minorColorCount=0;minorColorCount<numberOfMinorColors;minorColorCount++)
+        {
+            colorpairreference.majorColor = (enum MajorColor)majorColorCount;
+            colorpairreference.minorColor = (enum MinorColor)minorColorCount;
+            int pairnumberReference = GetPairNumberFromColor(&colorpairreference);
+            ColorPairToString(&colorpairreference, colorPairNamesManuel);
+            printf(" %s\t%d\n", colorPairNamesManuel,pairnumberReference );
+
+        }
+    }
+}
