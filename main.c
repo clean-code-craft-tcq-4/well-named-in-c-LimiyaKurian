@@ -1,12 +1,9 @@
 #include <stdio.h>
-#include <assert.h>
 #include "ColorCode.h"
-
-void ColorCode_ReferenceManuel(void);
 
 int main() {
     
-    ColorCode_ReferenceManuel();
+    colorCode_ReferenceManuel();
 	
     testNumberToPair(4, WHITE, BROWN);
     testNumberToPair(5, WHITE, SLATE);
@@ -17,7 +14,7 @@ int main() {
     return 0;
 }
 
-void ColorCode_ReferenceManuel(void)
+void colorCode_ReferenceManuel(void)
 {
     int majorColorCount,minorColorCount;
     ColorPair colorpairreference;
