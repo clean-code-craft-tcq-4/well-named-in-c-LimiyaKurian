@@ -2,6 +2,8 @@
 #include <assert.h>
 #include "ColorCode.h"
 
+void ColorCode_ReferenceManuel();
+
 int main() {
     
     ColorCode_ReferenceManuel();
