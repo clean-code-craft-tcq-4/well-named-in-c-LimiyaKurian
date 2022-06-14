@@ -1,26 +1,21 @@
-typedef enum
-{
-   WHITE =0, 
-   RED,
-   BLACK, 
-   YELLOW,
-   VIOLET
- }MajorColor;
- 
-typedef enum
-{
-   BLUE=0, 
-   ORANGE,
-   GREEN, 
-   BROWN,
-   SLATE
-} MinorColor;
+#include "ColorCode_Main.h"
 
-typedef struct {
-    MajorColor majorColor;
-    MinorColor minorColor;
-} ColorPair;
+const char* MajorColorNames[] = {
+    "White", "Red", "Black", "Yellow", "Violet"
+};
 
-extern ColorPair colorpairExtern;
-extern MajorColor majorcolor;
-extern MinorColor minorcolor;
+int numberOfMajorColors =
+    sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
+    
+const char* MinorColorNames[] = {
+    "Blue", "Orange", "Green", "Brown", "Slate"
+};
+
+const int MAX_COLORPAIR_NAME_CHARS = 16;
+
+int numberOfMinorColors =
+    sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
+
+MajorColor majorcolor;
+MinorColor minorcolor;
+ColorPair colorpair;
