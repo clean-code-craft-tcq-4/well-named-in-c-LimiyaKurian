@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include "ColorCode_Main.h"
+#include "ColorCode.h"
 
 int main() {
 	
