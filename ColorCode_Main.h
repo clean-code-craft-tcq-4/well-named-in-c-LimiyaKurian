@@ -29,4 +29,6 @@ extern MinorColor minorcolor;
 ColorPair GetColorFromPairNumber(int pairNumber);
 int GetPairNumberFromColor(const ColorPair* colorPair);
 void colorCodeReferenceManuel(void);
+void testNumberToPair(int pairNumber,MajorColor expectedMajor,MinorColor expectedMinor);
+void testPairToNumber(MajorColor major,MinorColor minor,int expectedPairNumber);
 
