@@ -1,5 +1,20 @@
-enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
-enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
+typedef enum
+{
+   WHITE =0, 
+   RED,
+   BLACK, 
+   YELLOW,
+   VIOLET
+ }MajorColor;
+ 
+typedef enum
+{
+   BLUE=0, 
+   ORANGE,
+   GREEN, 
+   BROWN,
+   SLATE
+} MinorColor;
 
 const char* MajorColorNames[] = {
     "White", "Red", "Black", "Yellow", "Violet"
@@ -22,3 +37,4 @@ typedef struct {
     enum MinorColor minorColor;
 } ColorPair;
 
+extern ColorPair colorpairExtern;
