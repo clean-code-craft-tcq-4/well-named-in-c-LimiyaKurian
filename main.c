@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
 #include "ColorCode_Main.h"
-#include "ColorCode.h"
 
+extern const int MAX_COLORPAIR_NAME_CHARS;
 int main() {
 	
     colorCodeReferenceManuel();
