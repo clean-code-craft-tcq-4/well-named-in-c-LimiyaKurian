@@ -1,6 +1,6 @@
 #include <stdio.h>
+#include <assert.h>
 #include "ColorCode.h"
-ColorPair colorPair;
 
 void ColorPairToString(const ColorPair* colorPair, char* buffer) {
     sprintf(buffer, "%s %s",
@@ -9,7 +9,7 @@ void ColorPairToString(const ColorPair* colorPair, char* buffer) {
 }
 
 ColorPair GetColorFromPairNumber(int pairNumber) {
-    //ColorPair colorPair;
+    ColorPair colorPair;
     int zeroBasedPairNumber = pairNumber - 1;
     colorPair.majorColor = 
         (enum MajorColor)(zeroBasedPairNumber / numberOfMinorColors);
@@ -23,21 +23,49 @@ int GetPairNumberFromColor(const ColorPair* colorPair) {
             colorPair->minorColor + 1;
 }
 
+void testNumberToPair(int pairNumber,
+    enum MajorColor expectedMajor,
+    enum MinorColor expectedMinor)
+{
+    ColorPair colorPair = GetColorFromPairNumber(pairNumber);
+    char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
+    ColorPairToString(&colorPair, colorPairNames);
+    printf("Got pair %s\n", colorPairNames);
+    assert(colorPair.majorColor == expectedMajor);
+    assert(colorPair.minorColor == expectedMinor);
+}
+
+void testPairToNumber(
+    enum MajorColor major,
+    enum MinorColor minor,
+    int expectedPairNumber)
+{
+    ColorPair colorPair;
+    colorPair.majorColor = major;
+    colorPair.minorColor = minor;
+    int pairNumber = GetPairNumberFromColor(&colorPair);
+    printf("Got pair number %d\n", pairNumber);
+    assert(pairNumber == expectedPairNumber);
+}
+
 void colorCodeReferenceManuel(void)
 {
     int majorColorCount,minorColorCount;
-    //ColorPair colorPair;
+    ColorPair colorpairreference;
     char colorPairNamesManuel[MAX_COLORPAIR_NAME_CHARS];
+
     printf("ColorPairCodeReferenceManuel\n");
+
     for(majorColorCount=0;majorColorCount<numberOfMajorColors;majorColorCount++)
     {
         for(minorColorCount=0;minorColorCount<numberOfMinorColors;minorColorCount++)
         {
-            colorPair.majorColor = (enum MajorColor)majorColorCount;
-            colorPair.minorColor = (enum MinorColor)minorColorCount;
-            int pairnumberReference = GetPairNumberFromColor(&colorPair);
-            ColorPairToString(&colorPair, colorPairNamesManuel);
+            colorpairreference.majorColor = (enum MajorColor)majorColorCount;
+            colorpairreference.minorColor = (enum MinorColor)minorColorCount;
+            int pairnumberReference = GetPairNumberFromColor(&colorpairreference);
+            ColorPairToString(&colorpairreference, colorPairNamesManuel);
             printf(" %s\t%d\n", colorPairNamesManuel,pairnumberReference );
+
         }
     }
 }
