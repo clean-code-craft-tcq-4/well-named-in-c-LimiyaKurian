@@ -3,6 +3,7 @@
 
 int main() {
 	
+    colorCodeReferenceManuel();
     testNumberToPair(4, WHITE, BROWN);
     testNumberToPair(5, WHITE, SLATE);
 
