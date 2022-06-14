@@ -1,4 +1,4 @@
-//#include "ColorCode.h"
+#include "ColorCode.h"
 
 MajorColor majorcolor;
 MinorColor minorcolor;
