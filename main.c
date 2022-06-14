@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <assert.h>
 #include "ColorCode_Main.h"
 
 int main() {
@@ -17,7 +18,7 @@ void testNumberToPair(int pairNumber,
     MajorColor expectedMajor,
     MinorColor expectedMinor)
 {
-    colorPair = GetColorFromPairNumber(pairNumber);
+    ColorPair colorPair = GetColorFromPairNumber(pairNumber);
     char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
     ColorPairToString(&colorPair, colorPairNames);
     printf("Got pair %s\n", colorPairNames);
@@ -30,9 +31,11 @@ void testPairToNumber(
     MinorColor minor,
     int expectedPairNumber)
 {
+    ColorPair colorPair;
     colorPair.majorColor = major;
     colorPair.minorColor = minor;
     int pairNumber = GetPairNumberFromColor(&colorPair);
     printf("Got pair number %d\n", pairNumber);
     assert(pairNumber == expectedPairNumber);
 }
+
