@@ -1,4 +1,3 @@
-#include "ColorCode.h"
 
 //extern enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
 //extern enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
