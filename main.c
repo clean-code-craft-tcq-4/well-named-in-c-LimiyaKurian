@@ -2,7 +2,7 @@
 #include <assert.h>
 #include "ColorCode.h"
 
-void ColorCode_ReferenceManuel();
+void ColorCode_ReferenceManuel(void);
 
 int main() {
     
@@ -17,7 +17,7 @@ int main() {
     return 0;
 }
 
-void ColorCode_ReferenceManuel()
+void ColorCode_ReferenceManuel(void)
 {
     int majorColorCount,minorColorCount;
     ColorPair colorpairreference;
