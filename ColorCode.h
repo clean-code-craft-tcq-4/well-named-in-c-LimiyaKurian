@@ -38,3 +38,5 @@ typedef struct {
 } ColorPair;
 
 extern ColorPair colorpairExtern;
+extern MajorColor majorcolor;
+extern MinorColor minorcolor;
