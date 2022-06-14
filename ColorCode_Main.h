@@ -1,7 +1,7 @@
-#include "ColorCode.h"
+//#include "ColorCode.h"
 
-extern enum MajorColor;
-extern enum MinorColor;
+MajorColor majorcolor;
+MinorColor minorcolor;
 ColorPair colorpairExtern;
 void testNumberToPair(int pairNumber,MajorColor expectedMajor,MinorColor expectedMinor);
 void testPairToNumber(MajorColor major,MinorColor minor,int expectedPairNumber);
