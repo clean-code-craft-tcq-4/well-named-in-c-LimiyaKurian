@@ -2,19 +2,6 @@
 #include <assert.h>
 #include "ColorCode.h"
 
-const char* MajorColorNames[] = {
-    "White", "Red", "Black", "Yellow", "Violet"
-};
-
-int numberOfMajorColors =
-    sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
-	
-const char* MinorColorNames[] = {
-    "Blue", "Orange", "Green", "Brown", "Slate"
-};
-
-const int MAX_COLORPAIR_NAME_CHARS = 16;
-
 int numberOfMinorColors =
     sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 void ColorPairToString(const ColorPair* colorPair, char* buffer) {
@@ -38,39 +25,12 @@ int GetPairNumberFromColor(const ColorPair* colorPair) {
             colorPair->minorColor + 1;
 }
 
-void testNumberToPair(int pairNumber,
-    MajorColor expectedMajor,
-    MinorColor expectedMinor)
-{
-    ColorPair colorPair = GetColorFromPairNumber(pairNumber);
-    char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
-    ColorPairToString(&colorPair, colorPairNames);
-    printf("Got pair %s\n", colorPairNames);
-    assert(colorPair.majorColor == expectedMajor);
-    assert(colorPair.minorColor == expectedMinor);
-}
-
-void testPairToNumber(
-    MajorColor major,
-    MinorColor minor,
-    int expectedPairNumber)
-{
-    ColorPair colorPair;
-    colorPair.majorColor = major;
-    colorPair.minorColor = minor;
-    int pairNumber = GetPairNumberFromColor(&colorPair);
-    printf("Got pair number %d\n", pairNumber);
-    assert(pairNumber == expectedPairNumber);
-}
-
 void colorCodeReferenceManuel(void)
 {
     int majorColorCount,minorColorCount;
     ColorPair colorpairreference;
     char colorPairNamesManuel[MAX_COLORPAIR_NAME_CHARS];
-
     printf("ColorPairCodeReferenceManuel\n");
-
     for(majorColorCount=0;majorColorCount<numberOfMajorColors;majorColorCount++)
     {
         for(minorColorCount=0;minorColorCount<numberOfMinorColors;minorColorCount++)
